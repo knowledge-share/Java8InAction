@@ -9,6 +9,7 @@ public class Lambda {
 
     public void defindLambda(){
         Consumer<String> stringConsumer = (String s) -> System.out.println(s);
+        Runnable tt = () -> System.out.println("tt");
     }
 
 }
