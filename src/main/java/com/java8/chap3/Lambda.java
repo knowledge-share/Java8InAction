@@ -15,6 +15,7 @@ public class Lambda {
         Function<String,Integer> func = (String s) -> s.length();
         DoubleSupplier doubleSupplier = () -> 50;
         Runnable runnable = () -> {};
+        //()-> return "test";
     }
 
 }
