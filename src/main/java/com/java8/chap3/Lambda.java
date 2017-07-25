@@ -19,6 +19,7 @@ public class Lambda {
         DoubleSupplier doubleSupplier1 = () -> {
             return 10;
         };
+        Runnable runnable1 = () -> {};
     }
 
 }
