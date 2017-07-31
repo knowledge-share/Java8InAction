@@ -33,6 +33,16 @@ public class StreamTest {
         //映射
         List<Integer> integers = list.stream().map(String::length).collect(toList());
         System.out.println(integers.toString());
+
+        //流的扁平化1
+        String [] words = new String[]{"hello","world"};
+        List<String[]> wordList = Arrays.stream(words).map(w -> w.split("")).distinct().collect(toList());
+        wordList.forEach(System.out::println);
+
+        //流的扁平化2
+        List<String> strings = Arrays.stream(words).map(w -> w.split("")).flatMap(Arrays::stream).distinct().collect(toList());
+        strings.forEach(System.out::println);
+
     }
 
 }
