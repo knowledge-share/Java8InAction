@@ -30,6 +30,9 @@ public class StreamTest {
         List<String> collect = list.stream().skip(2).collect(toList());
         collect.forEach(System.out::println);
 
+        //映射
+        List<Integer> integers = list.stream().map(String::length).collect(toList());
+        System.out.println(integers.toString());
     }
 
 }
