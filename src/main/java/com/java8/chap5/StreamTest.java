@@ -17,6 +17,19 @@ public class StreamTest {
         List<String> emptys = list.stream()
                 .filter(String::isEmpty)
                 .collect(toList());
+
+        //去重
+        long count = list.stream().distinct().count();
+        System.out.println(count);
+
+        //截短流
+        long count1 = list.stream().limit(2).count();
+        System.out.println(count1);
+
+        //跳过
+        List<String> collect = list.stream().skip(2).collect(toList());
+        collect.forEach(System.out::println);
+
     }
 
 }
