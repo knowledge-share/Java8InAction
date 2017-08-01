@@ -43,6 +43,17 @@ public class StreamTest {
         List<String> strings = Arrays.stream(words).map(w -> w.split("")).flatMap(Arrays::stream).distinct().collect(toList());
         strings.forEach(System.out::println);
 
+        List<Integer> a = Arrays.asList(1,2,3);
+        List<Integer> b = Arrays.asList(3, 4);
+
+        //练习
+        List<int[]> lists = a.stream().flatMap(i -> b.stream().map(y -> new int[]{i, y})).collect(toList());
+        lists.forEach(i-> System.out.println(Arrays.toString(i)));
+
+        //只返回被3整除的数
+        System.out.println("========分割线========");
+        List<int[]> lists2 = a.stream().flatMap(i -> b.stream().filter(j -> (j+i)%3==0).map(y -> new int[]{i, y})).collect(toList());
+        lists2.forEach(i-> System.out.println(Arrays.toString(i)));
     }
 
 }
